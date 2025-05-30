@@ -44,17 +44,53 @@
         }
       }
 
+      /* Avís estil post-it dins del quadre */
       .alerta-alert {
-  animation: pulse 2s infinite;
-  border: 2px dashed #dc3545;
-}
+        position: relative;
+        margin-top: 1rem;
+        margin-right: 1rem;
+        margin-left: auto;
+        background-color: #fff176;
+        border: 2px dashed #fbc02d;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        width: 90%;
+        max-width: 280px;
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+        transform: rotate(-3deg);
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        opacity: 0;
+        animation: fadeInPostit 2s ease-out 2s forwards;
+        z-index: 5;
+      }
 
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.03); opacity: 0.85; }
-  100% { transform: scale(1); opacity: 1; }
-}
+      @media (min-width: 768px) {
+        .alerta-alert {
+          position: absolute;
+          bottom: -6.5rem;
+          right: 1rem;
+          margin-top: 0;
+        }
+      }
 
+      .xinxeta {
+        position: absolute;
+        top: -12px;
+        left: 12px;
+        font-size: 1.5rem;
+        transform: rotate(10deg);
+      }
+
+      @keyframes fadeInPostit {
+        from {
+          opacity: 0;
+          transform: translateY(20px) rotate(-3deg);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) rotate(-3deg);
+        }
+      }
 
       /* Dinosaure corrent */
       .gif {
@@ -96,21 +132,17 @@
         <p><strong>📍 Lloc:</strong> A casa de la seua mamà</p>
         <p>Hi haurà dinosaures, jocs, pasteló... i molts riures! 🎂</p>
 
-        <div class="alerta-alert bg-warning p-3 rounded shadow-lg mt-4">
-  <h5 class="mb-2 text-danger fw-bold">
-    🚨 ATENCIÓ! 
-  </h5>
-  <p class="mb-0">
-    Podria haver canvis d’última hora en l’hora o el lloc.<br />
-    Torna a visitar aquesta pàgina abans del dia de la festa per assegurar-te!
-  </p>
-</div>
-
-
-        <p class="mt-4">T'esperem amb moltes ganes! 💚</p>
+        <div class="alerta-alert animate-postit">
+          <div class="xinxeta">📌</div>
+          <h5 class="mb-2 text-danger fw-bold">🚨 ATENCIÓ!</h5>
+          <p class="mb-0">
+            Podria haver canvis d’última hora en l’hora o el lloc.<br />
+            Torna a visitar aquesta pàgina abans del dia de la festa per
+            assegurar-te!
+          </p>
+        </div>
       </div>
     </div>
-
     <!-- Confeti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
