@@ -130,6 +130,11 @@
           right: 100%;
         }
       }
+
+      .botonet {
+        font-size: 1.2rem;
+  padding: 0.2rem 0.4rem;
+      }
     </style>
   </head>
   <body>
@@ -151,15 +156,15 @@
         <p>
           <strong>📍 Lloc:</strong>
           <button
-            type="button"
-            class="btn btn-outline-primary btn-sm"
-            data-bs-toggle="popover"
-            data-bs-placement="top"
-            data-bs-trigger="focus"
-            data-bs-content="Carrer Ramón i Cajal, 3, 46712 Piles, València"
-          >
-            Barrufets - Piles
-          </button>
+  type="button"
+  class="btn btn-outline-success btn-sm botonet"
+  data-bs-toggle="tooltip"
+  data-bs-placement="top"
+  title="Carrer Ramón i Cajal, 3, 46712 Piles, València"
+>
+  Barrufets - Piles
+</button>
+
         </p>
 
         <p>Hi haurà dinosaures, jocs, pasteló... i molts riures! 🎂</p>
@@ -189,11 +194,10 @@
         });
       }, 3000);
 
-      // Inicialitza tots els popovers
-      const popoverTriggerList = document.querySelectorAll(
-        '[data-bs-toggle="popover"]'
-      );
-      popoverTriggerList.forEach((el) => new bootstrap.Popover(el));
+      // Tooltip
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+tooltipTriggerList.forEach((el) => new bootstrap.Tooltip(el));
+
     </script>
   </body>
 </html>
