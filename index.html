@@ -44,11 +44,17 @@
         }
       }
 
-      .alerta {
-        margin-top: 2rem;
-        font-weight: bold;
-        color: #b0413e;
-      }
+      .alerta-alert {
+  animation: pulse 2s infinite;
+  border: 2px dashed #dc3545;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.03); opacity: 0.85; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
 
       /* Dinosaure corrent */
       .gif {
@@ -74,7 +80,7 @@
   <body>
     <!-- Dinosaure corrent (gif animat) -->
     <div class="gif">
-      <img src="corrent.gif" alt="Dinosaure corrent" class="gif-corrent" />
+      <img src="corrent.gif" alt="Dinosaure corrent" />
     </div>
     <!-- Contingut -->
     <div class="container text-center">
@@ -88,13 +94,18 @@
         <p><strong>📅 Data:</strong> Dissabte, 21 de juny</p>
         <p><strong>🕖 Hora:</strong> A les 19:00 de la vesprada</p>
         <p><strong>📍 Lloc:</strong> A casa de la seua mamà</p>
-        <p>Hi haurà dinosaures, jocs, pasteló... i molts riures! 🦕🎂</p>
+        <p>Hi haurà dinosaures, jocs, pasteló... i molts riures! 🎂</p>
 
-        <div class="alerta">
-          ⚠️ Atenció! Podria haver canvis d’última hora en l’hora o el lloc.<br />
-          Torna a visitar aquesta pàgina abans del dia de la festa per
-          assegurar-te!
-        </div>
+        <div class="alerta-alert bg-warning p-3 rounded shadow-lg mt-4">
+  <h5 class="mb-2 text-danger fw-bold">
+    🚨 ATENCIÓ! 
+  </h5>
+  <p class="mb-0">
+    Podria haver canvis d’última hora en l’hora o el lloc.<br />
+    Torna a visitar aquesta pàgina abans del dia de la festa per assegurar-te!
+  </p>
+</div>
+
 
         <p class="mt-4">T'esperem amb moltes ganes! 💚</p>
       </div>
